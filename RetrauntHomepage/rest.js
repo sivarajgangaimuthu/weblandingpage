@@ -27,3 +27,18 @@ darkToggle.addEventListener("click",()=>{
         darkToggle.textContent="🌙";
     }
 });
+cards.forEach(card=>{
+    let plusBtn=card.querySelector(".btn-plus");
+    let minusBtn=card.querySelector(".btn-minus");
+    let qty=card.querySelector(".qty");
+    plusBtn.addEventListener("click",()=>{
+        let current=parseInt(qty.textContent);
+        qty.textContent=current+1;
+    });
+    minusBtn.addEventListener("click",()=>{
+        let current=parseInt(qty.textContent);
+        if(current>1){
+            qty.textContent=current-1;
+        }
+    });
+});
